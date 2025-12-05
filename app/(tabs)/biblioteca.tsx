@@ -6,42 +6,39 @@ import { addWhitelistedNativeProps } from 'react-native-reanimated/lib/typescrip
 const { width } = Dimensions.get('window');
 
 // --- Dados Simulados dos Assuntos da Biblioteca ---
-const subjects = [
-  { name: 'Gramática', icon: require('../../assets/images/gramatica.png') }, // ⚠ Substitua pelos ícones reais
-  { name: 'Matemática', icon: require('../../assets/images/matematica.png') },
-  { name: 'Direito', icon: require('../../assets/images/direito.png') },
-  { name: 'Apostilas', icon: require('../../assets/images/apostilas.png') },
-  { name: 'Conhecimento geral', icon: require('../../assets/images/conhecimento.png') },
-  { name: 'Informática', icon: require('../../assets/images/informatica.png') },
-  { name: 'História', icon: require('../../assets/images/historia.png') },
-  { name: 'Filosofia', icon: require('../../assets/images/filosofia.png') },
-  { name: 'Sociologia', icon: require('../../assets/images/sociologia.png') },
-  { name: 'Administração', icon: require('../../assets/images/administracao.png') },
-  { name: 'Economia', icon: require('../../assets/images/economia.png') },
-  { name: 'Lógica', icon: require('../../assets/images/logica.png') },
-  { name: 'Inglês', icon: require('../../assets/images/ingles.png') },
-  { name: 'Química', icon: require('../../assets/images/quimica.png') },
-  { name: 'Literatura', icon: require('../../assets/images/literatura.png') },
-];
+// Ícones dos cards da matéria
+const ICON_GRAMATICA = require("../../assets/images/gramatica.png");
+const ICON_MATEMATICA = require("../../assets/images/matematica.png");
+const ICON_DIREITO = require("../../assets/images/direito.png");
+const ICON_APOSTILAS = require("../../assets/images/apostilas.png");
+const ICON_CONHECIMENTO = require("../../assets/images/conhecimento.png");
+const ICON_INFORMATICA = require("../../assets/images/informatica.png");
+const ICON_HISTORIA = require("../../assets/images/historia.png");
+const ICON_FILOSOFIA = require("../../assets/images/filosofia.png");
+const ICON_SOCIOLOGIA = require("../../assets/images/sociologia.png");
+const ICON_ADMIN = require("../../assets/images/administracao.png");
+const ICON_ECONOMIA = require("../../assets/images/economia.png");
+const ICON_LOGICA = require("../../assets/images/logica.png");
+const ICON_INGLES = require("../../assets/images/ingles.png");
+const ICON_QUIMICA = require("../../assets/images/quimica.png");
+const ICON_LITERATURA = require("../../assets/images/literatura.png");
+
 
 // --- Componente do Card do Assunto ---
-interface SubjectCardProps {
-  imageSource: any; 
-  onPress: () => void;
+interface CardItemProps {
   title: string;
+  iconSource: any;
+  onPress: () => void;
 }
 
-const SubjectCard: React.FC<SubjectCardProps> = ({ imageSource, onPress, title }) => (
-  <TouchableOpacity style={styles.card} onPress={onPress}
-  >
-    <Image 
-      source={imageSource}
-      style={styles.cardImage} 
-      resizeMode="contain"
-    />
-    <Text style={styles.cardTitle}>{title}</Text> 
-  </TouchableOpacity>
-);
+const CardItem: React.FC<CardItemProps> = ({ title, iconSource, onPress }) => {
+  return (
+    <TouchableOpacity style={styles.cardItem} onPress={onPress}>
+      <Image source={iconSource} style={styles.cardIcon} resizeMode="contain" />
+      <Text style={styles.cardTitle}>{title}</Text>
+    </TouchableOpacity>
+  );
+};
 
 
 // --- Componente Principal da Biblioteca Screen ---
@@ -50,7 +47,7 @@ const BibliotecaScreen: React.FC = () => {
 
   const handleSubjectPress = (subjectName: string) => {
     // Futuramente: router.push(/biblioteca/${subjectName.toLowerCase()});
-     Alert.alert(
+    Alert.alert(
         'Ação Assunto', // Título (string)
         `Você clicou em: ${subjectName}. Navegar para o conteúdo.`, // Mensagem (string interpolada com backticks)
         [{ text: 'OK' }]
@@ -69,23 +66,37 @@ const BibliotecaScreen: React.FC = () => {
             />
         </View>
 
-        {/* 2. Grid de Assuntos */}
-        <View style={styles.cardGrid}>
-          {subjects.map((subject, index) => (
-            <SubjectCard
-              key={index}
-              imageSource={subject.icon}
-              title={subject.name}
-              onPress={() => handleSubjectPress(subject.name)}
-            />
-          ))}
-        </View>
+      {/* CARDS DA TELA PRINCIPAL */}
+<View style={styles.cardsGrid}>
+
+  <CardItem title="Gramática" iconSource={ICON_GRAMATICA} onPress={() => router.push("/")} />
+  <CardItem title="Matemática" iconSource={ICON_MATEMATICA} onPress={() => router.push("/matematica")} />
+  <CardItem title="Direito" iconSource={ICON_DIREITO} onPress={() => router.push("/direito")} />
+
+  <CardItem title="Apostilas" iconSource={ICON_APOSTILAS} onPress={() => router.push("/apostilas")} />
+  <CardItem title="Conhecimento geral" iconSource={ICON_CONHECIMENTO} onPress={() => router.push("/conhecimento")} />
+  <CardItem title="Informática" iconSource={ICON_INFORMATICA} onPress={() => router.push("/informatica")} />
+
+  <CardItem title="História" iconSource={ICON_HISTORIA} onPress={() => router.push("/historia")} />
+  <CardItem title="Filosofia" iconSource={ICON_FILOSOFIA} onPress={() => router.push("/filosofia")} />
+  <CardItem title="Sociologia" iconSource={ICON_SOCIOLOGIA} onPress={() => router.push("/sociologia")} />
+
+  <CardItem title="Administração" iconSource={ICON_ADMIN} onPress={() => router.push("/administracao")} />
+  <CardItem title="Economia" iconSource={ICON_ECONOMIA} onPress={() => router.push("/economia")} />
+  <CardItem title="Lógica" iconSource={ICON_LOGICA} onPress={() => router.push("/logica")} />
+
+  <CardItem title="Inglês" iconSource={ICON_INGLES} onPress={() => router.push("/ingles")} />
+  <CardItem title="Química" iconSource={ICON_QUIMICA} onPress={() => router.push("/quimica")} />
+  <CardItem title="Literatura" iconSource={ICON_LITERATURA} onPress={() => router.push("/(tabs)/literatura")} />
+
+</View>
 
       </ScrollView>
       {/* NOTA: A Bottom Tab Bar será renderizada automaticamente pelo _layout.tsx se for uma tela de tab */}
     </SafeAreaView>
   );
 };
+
   
 
 
@@ -115,12 +126,7 @@ const styles = StyleSheet.create({
     height: 100,
     resizeMode: 'contain', 
   },
-  cardGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap', 
-    justifyContent: 'center', // Alinha à esquerda
-    paddingHorizontal: CARD_MARGIN / 2, // Marge lateral
-  },
+
   card: {
     width: CARD_SIZE,
     height: CARD_SIZE,
@@ -143,13 +149,40 @@ const styles = StyleSheet.create({
     height: '60%', 
     tintColor: '#010101ff', // Os ícones do design são brancos
   },
-  cardTitle: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: '#090606ff', // Texto branco para combinar com o fundo azul
-    textAlign: 'center',
-    marginTop: 5,
-  },
+
+  cardsGrid: {
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  gap: 15,
+  paddingHorizontal: 10,
+},
+
+cardItem: {
+  width: Dimensions.get("window").width * 0.27,
+  height: Dimensions.get("window").width * 0.27,
+  backgroundColor: "#FFFFFF",
+  borderRadius: 12,
+  justifyContent: "center",
+  alignItems: "center",
+  elevation: 5,
+},
+
+cardIcon: {
+  width: 45,
+  height: 45,
+  marginBottom: 8,
+  tintColor: "#000"
+},
+
+cardTitle: {
+  fontSize: 14,
+  fontWeight: "600",
+  color: "#000",
+  textAlign: "center",
+},
+
 });
+
 
 export default BibliotecaScreen;
