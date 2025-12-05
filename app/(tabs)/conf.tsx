@@ -57,7 +57,7 @@ const ConfiguracoesScreen: React.FC = () => {
           text: 'Sair',
           onPress: () => {
             // Limpa o histórico e volta para a tela raiz (Login ou Onboarding)
-            router.replace('/'); 
+            router.replace('/(tabs)/login'); 
           },
         },
       ],

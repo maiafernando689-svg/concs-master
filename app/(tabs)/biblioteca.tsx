@@ -50,13 +50,12 @@ const BibliotecaScreen: React.FC = () => {
 
   const handleSubjectPress = (subjectName: string) => {
     // Futuramente: router.push(/biblioteca/${subjectName.toLowerCase()});
-   Alert.alert(
+     Alert.alert(
         'Ação Assunto', // Título (string)
         `Você clicou em: ${subjectName}. Navegar para o conteúdo.`, // Mensagem (string interpolada com backticks)
         [{ text: 'OK' }]
-   );
-  };
-
+    );
+};
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -88,6 +87,7 @@ const BibliotecaScreen: React.FC = () => {
   );
 };
   
+
 
 // --- Estilos da Tela ---
 const CARD_MARGIN = 10;
