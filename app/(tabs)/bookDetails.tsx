@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import { books } from "../../hooks/Data/books";
+import { books } from "../../hooks/Data/booksliteratura";
 
 export default function BookDetails() {
   const { id } = useLocalSearchParams();

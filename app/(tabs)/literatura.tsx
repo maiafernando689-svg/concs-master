@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, FlatList, StyleSheet } from "react-native";
 import BookCard from "../../components/BookCard";
-import { books } from "../../hooks/Data/books";
+import { books } from "../../hooks/Data/booksliteratura";
 import { useRouter } from "expo-router";
 
 export default function LibraryScreen() {
@@ -30,7 +30,7 @@ export default function LibraryScreen() {
         renderItem={({ item }) => (
           <BookCard
             book={item}
-            onPress={() => router.push('../../=${item.id}')}
+            onPress={() => router.push(`../../=${item.id}`)}
           />
         )}
       />

@@ -69,7 +69,7 @@ const BibliotecaScreen: React.FC = () => {
       {/* CARDS DA TELA PRINCIPAL */}
 <View style={styles.cardsGrid}>
 
-  <CardItem title="Gramática" iconSource={ICON_GRAMATICA} onPress={() => router.push("/")} />
+  <CardItem title="Gramática" iconSource={ICON_GRAMATICA} onPress={() => router.push("/gramatica")} />
   <CardItem title="Matemática" iconSource={ICON_MATEMATICA} onPress={() => router.push("/matematica")} />
   <CardItem title="Direito" iconSource={ICON_DIREITO} onPress={() => router.push("/direito")} />
 
@@ -83,10 +83,10 @@ const BibliotecaScreen: React.FC = () => {
 
   <CardItem title="Administração" iconSource={ICON_ADMIN} onPress={() => router.push("/administracao")} />
   <CardItem title="Economia" iconSource={ICON_ECONOMIA} onPress={() => router.push("/economia")} />
-  <CardItem title="Lógica" iconSource={ICON_LOGICA} onPress={() => router.push("/logica")} />
+  <CardItem title="Lógica" iconSource={ICON_LOGICA} onPress={() => router.push("/(tabs)/logica")} />
 
-  <CardItem title="Inglês" iconSource={ICON_INGLES} onPress={() => router.push("/ingles")} />
-  <CardItem title="Química" iconSource={ICON_QUIMICA} onPress={() => router.push("/quimica")} />
+  <CardItem title="Inglês" iconSource={ICON_INGLES} onPress={() => router.push("/(tabs)/ingles")} />
+  <CardItem title="Química" iconSource={ICON_QUIMICA} onPress={() => router.push("/(tabs)/quimica")} />
   <CardItem title="Literatura" iconSource={ICON_LITERATURA} onPress={() => router.push("/(tabs)/literatura")} />
 
 </View>
