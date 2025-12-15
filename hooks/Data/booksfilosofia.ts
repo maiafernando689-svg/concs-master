@@ -25,7 +25,7 @@ export const books: Book[] = [
     id: 2,
     title: "Meditações",
     author: "Marco Aurélio",
-    cover: require("../../assets/images/meditacoes.png"),
+    cover: require("../../assets/images/meditacoes.jpeg"),
     description: "Reflexões pessoais do imperador romano sobre o estoicismo.",
     topics: ["Estoicismo", "Filosofia Antiga", "Autodomínio"],
     pdf: require("../../assets/images/pdfs/meditacoes.pdf"),
@@ -48,7 +48,7 @@ export const books: Book[] = [
     cover: require("../../assets/images/historiadafilosofiamedieval.jpg"),
     description: "Um ensaio filosófico essencial sobre o absurdo da existência.",
     topics: ["Existencialismo", "Absurdo", "Filosofia"],
-    pdf: require("../../assets/images/pdfs/historia-da-filosofia-medieval.pdf"),
+    pdf: require("../../assets/images/pdfs/historiadafilosofiamedieval.pdf"),
   },
 
   {
@@ -62,7 +62,7 @@ export const books: Book[] = [
   },
 
     {
-  id: 11,
+  id: 6,
   title: "Leviatã",
   author: "Thomas Hobbes",
   cover: require("../../assets/images/leviata.png"),
@@ -72,22 +72,12 @@ export const books: Book[] = [
 },
 
 {
-  id: 12,
+  id: 7,
   title: "Confissões",
   author: "Santo Agostinho",
   cover: require("../../assets/images/confissoes.png"),
   description: "A clássica autobiografia espiritual que marcou a filosofia cristã.",
   topics: ["Filosofia", "Cristianismo", "Autobiografia"],
   pdf: require("../../assets/images/pdfs/confissoes.pdf"),
-},
-
-{
-  id: 13,
-  title: "Assim Falou Zaratustra",
-  author: "Friedrich Nietzsche",
-  cover: require("../../assets/images/zaratustra.png"),
-  description: "A obra-prima filosófica e poética de Nietzsche sobre o além-do-homem.",
-  topics: ["Filosofia", "Existencialismo", "Poético"],
-  pdf: require("../../assets/images/pdfs/zaratustra.pdf"),
 },
 ];

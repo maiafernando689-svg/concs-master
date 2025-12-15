@@ -74,15 +74,15 @@ const BibliotecaScreen: React.FC = () => {
   <CardItem title="Direito" iconSource={ICON_DIREITO} onPress={() => router.push("/direito")} />
 
   <CardItem title="Apostilas" iconSource={ICON_APOSTILAS} onPress={() => router.push("/apostilas")} />
-  <CardItem title="Conhecimento geral" iconSource={ICON_CONHECIMENTO} onPress={() => router.push("/conhecimento")} />
-  <CardItem title="Informática" iconSource={ICON_INFORMATICA} onPress={() => router.push("/informatica")} />
+  <CardItem title="Conhecimento geral" iconSource={ICON_CONHECIMENTO} onPress={() => router.push("/(tabs)/conhecimento")} />
+  <CardItem title="Informática" iconSource={ICON_INFORMATICA} onPress={() => router.push("/(tabs)/informatica")} />
 
-  <CardItem title="História" iconSource={ICON_HISTORIA} onPress={() => router.push("/historia")} />
-  <CardItem title="Filosofia" iconSource={ICON_FILOSOFIA} onPress={() => router.push("/filosofia")} />
-  <CardItem title="Sociologia" iconSource={ICON_SOCIOLOGIA} onPress={() => router.push("/sociologia")} />
+  <CardItem title="História" iconSource={ICON_HISTORIA} onPress={() => router.push("/(tabs)/historia")} />
+  <CardItem title="Filosofia" iconSource={ICON_FILOSOFIA} onPress={() => router.push("/(tabs)/filosofia")} />
+  <CardItem title="Sociologia" iconSource={ICON_SOCIOLOGIA} onPress={() => router.push("/(tabs)/sociologia")} />
 
-  <CardItem title="Administração" iconSource={ICON_ADMIN} onPress={() => router.push("/administracao")} />
-  <CardItem title="Economia" iconSource={ICON_ECONOMIA} onPress={() => router.push("/economia")} />
+  <CardItem title="Administração" iconSource={ICON_ADMIN} onPress={() => router.push("/(tabs)/administracao")} />
+  <CardItem title="Economia" iconSource={ICON_ECONOMIA} onPress={() => router.push("/(tabs)/economia")} />
   <CardItem title="Lógica" iconSource={ICON_LOGICA} onPress={() => router.push("/(tabs)/logica")} />
 
   <CardItem title="Inglês" iconSource={ICON_INGLES} onPress={() => router.push("/(tabs)/ingles")} />
